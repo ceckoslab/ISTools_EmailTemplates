@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ISTools_EmailTemplates bootstrap file
+ *
+ * @category     ISTools
+ * @package      ISTools_EmailTemplates
+ * @author       Igor Solovyov <igorsolovyov@me.com>
+ */
+-->
+<config>
+    <modules>
+        <ISTools_EmailTemplates>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Adminhtml/>
+                <Mage_Sales/>
+            </depends>
+        </ISTools_EmailTemplates>
+    </modules>
+</config>

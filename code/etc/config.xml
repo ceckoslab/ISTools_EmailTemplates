@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ISTools_EmailTemplates config file
+ *
+ * @category     ISTools
+ * @package      ISTools_EmailTemplates
+ * @author       Igor Solovyov <igorsolovyov@me.com>
+ */
+-->
+<config>
+    <modules>
+        <ISTools_EmailTemplates>
+            <version>0.1</version>
+        </ISTools_EmailTemplates>
+    </modules>
+    <global>
+        <helpers>
+            <email_templates>
+                <class>ISTools_EmailTemplates_Helper</class>
+            </email_templates>
+        </helpers>
+        <models>
+            <email_templates>
+                <class>ISTools_EmailTemplates_Model</class>
+            </email_templates>
+            <core>
+                <rewrite>
+                    <!-- skip sending emails if there is a flag in the registry -->
+                    <email_template>ISTools_EmailTemplates_Model_Core_Email_Template</email_template>
+                </rewrite>
+            </core>
+        </models>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <ISTools_EmailTemplates before="Mage_Adminhtml">ISTools_EmailTemplates_Adminhtml</ISTools_EmailTemplates>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <bundle>
+                    <file>is_tools/email_templates.xml</file>
+                </bundle>
+            </updates>
+        </layout>
+        <events>
+            <controller_action_predispatch_adminhtml>
+                <observers>
+                    <email_templates_controller_action_predispatch_adminhtml>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>controllerActionPreDispatchAdminhtml</method>
+                    </email_templates_controller_action_predispatch_adminhtml>
+                </observers>
+            </controller_action_predispatch_adminhtml>
+            <controller_action_postdispatch_adminhtml>
+                <observers>
+                    <email_templates_controller_action_postdispatch_adminhtml>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>controllerActionPostDispatchAdminhtml</method>
+                    </email_templates_controller_action_postdispatch_adminhtml>
+                </observers>
+            </controller_action_postdispatch_adminhtml>
+        </events>
+    </adminhtml>
+</config>

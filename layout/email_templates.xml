@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ISTools_EmailTemplates adminhtml theme file
+ *
+ * @category     ISTools
+ * @package      ISTools_EmailTemplates
+ * @author       Igor Solovyov <igorsolovyov@me.com>
+ */
+-->
+<layout>
+    <adminhtml_sales_order_view>
+        <reference name="sales_order_edit">
+            <action method="addButton">
+                <id>email_new</id>
+                <data helper="email_templates/addButton">
+                    <type>order_view</type>
+                    <label>New Order Email</label>
+                    <action_name>viewOrderNewTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-2</sortOrder>
+            </action>
+            <action method="addButton">
+                <id>email_update</id>
+                <data helper="email_templates/addButton">
+                    <type>order_view</type>
+                    <label>Update Order Email</label>
+                    <action_name>viewOrderUpdateTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-1</sortOrder>
+            </action>
+        </reference>
+    </adminhtml_sales_order_view>
+
+    <adminhtml_sales_order_invoice_view>
+        <reference name="sales_invoice_view">
+            <action method="addButton">
+                <id>email_new</id>
+                <data helper="email_templates/addButton">
+                    <type>invoice_view</type>
+                    <label>New Invoice Email</label>
+                    <action_name>viewInvoiceNewTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-2</sortOrder>
+            </action>
+            <action method="addButton">
+                <id>email_update</id>
+                <data helper="email_templates/addButton">
+                    <type>invoice_view</type>
+                    <label>Update Invoice Email</label>
+                    <action_name>viewInvoiceUpdateTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-1</sortOrder>
+            </action>
+        </reference>
+    </adminhtml_sales_order_invoice_view>
+
+    <adminhtml_sales_order_shipment_view>
+        <reference name="sales_shipment_view">
+            <action method="addButton">
+                <id>email_new</id>
+                <data helper="email_templates/addButton">
+                    <type>shipment_view</type>
+                    <label>New Shippment Email</label>
+                    <action_name>viewShipmentNewTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-2</sortOrder>
+            </action>
+            <action method="addButton">
+                <id>email_update</id>
+                <data helper="email_templates/addButton">
+                    <type>shipment_view</type>
+                    <label>Update Shippment Email</label>
+                    <action_name>viewShipmentUpdateTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-1</sortOrder>
+            </action>
+        </reference>
+    </adminhtml_sales_order_shipment_view>
+
+    <adminhtml_sales_order_creditmemo_view>
+        <reference name="sales_creditmemo_view">
+            <action method="addButton">
+                <id>email_view</id>
+                <data helper="email_templates/addButton">
+                    <type>creditmemo_view</type>
+                    <label>New Credit Memo Email</label>
+                    <action_name>viewCreditmemoNewTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-2</sortOrder>
+            </action>
+            <action method="addButton">
+                <id>email_view_update</id>
+                <data helper="email_templates/addButton">
+                    <type>creditmemo_view</type>
+                    <label>Update Credit Memo Email</label>
+                    <action_name>viewCreditmemoUpdateTemplate</action_name>
+                </data>
+                <level>0</level>
+                <sortOrder>-1</sortOrder>
+            </action>
+        </reference>
+    </adminhtml_sales_order_creditmemo_view>
+</layout>
