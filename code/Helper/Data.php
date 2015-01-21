@@ -33,7 +33,8 @@ class ISTools_EmailTemplates_Helper_Data extends Mage_Core_Helper_Abstract
     {
         return array(
             'label'     => Mage::helper('adminhtml')->__($label),
-            'onclick'   =>  'setLocation(\'' . $this->_getEmailPreviewUrl($type, $actionName) . '\')',
+//            'onclick'   =>  'setLocation(\'' . $this->_getEmailPreviewUrl($type, $actionName) . '\')',
+            'onclick'   =>  'window.open(\'' . $this->_getEmailPreviewUrl($type, $actionName) . '\', \'_blank\');',
         );
     }
 
