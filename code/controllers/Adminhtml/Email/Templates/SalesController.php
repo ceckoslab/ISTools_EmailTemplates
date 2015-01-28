@@ -37,7 +37,12 @@ class ISTools_EmailTemplates_Adminhtml_Email_Templates_SalesController extends M
             // Try to send an email. After this we have message body in the registry.
             switch ($emailType) {
                 case 'new':
-                    $action = ($entity instanceof Mage_Sales_Model_Order) ? 'sendNewOrderEmail' : 'sendEmail';
+                    if ($entity instanceof Mage_Sales_Model_Order) {
+                        $action = 'sendNewOrderEmail';
+                        $entity->setEmailSent(false);
+                    } else {
+                        $action = 'sendEmail';
+                    }
                     $entity->$action(true);
                     break;
 
