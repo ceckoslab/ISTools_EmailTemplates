@@ -1,3 +1,3 @@
-code                         app/code/local/ISTools/EmailTemplates
-ISTools_EmailTemplates.xml   app/etc/modules/ISTools_EmailTemplates.xml
-layout/email_templates.xml   app/design/adminhtml/default/default/layout/is_tools/email_templates.xml
+app/code/local/ISTools/EmailTemplates app/code/local/ISTools/EmailTemplates
+app/etc/modules/ISTools_EmailTemplates.xml app/etc/modules/ISTools_EmailTemplates.xml
+app/design/adminhtml/default/default/layout/is_tools/email_templates.xml app/design/adminhtml/default/default/layout/is_tools/email_templates.xml
