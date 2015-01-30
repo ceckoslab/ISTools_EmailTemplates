@@ -52,22 +52,80 @@
             </updates>
         </layout>
         <events>
-            <controller_action_predispatch_adminhtml>
+            <controller_action_predispatch_adminhtml_sales_order_viewOrderNewTemplate>
                 <observers>
-                    <email_templates_controller_action_predispatch_adminhtml>
+                    <viewOrderNewTemplate_predispatch>
                         <class>email_templates/adminhtml_observer</class>
-                        <method>controllerActionPreDispatchAdminhtml</method>
-                    </email_templates_controller_action_predispatch_adminhtml>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
                 </observers>
-            </controller_action_predispatch_adminhtml>
-            <controller_action_postdispatch_adminhtml>
+            </controller_action_predispatch_adminhtml_sales_order_viewOrderNewTemplate>
+            <controller_action_predispatch_adminhtml_sales_order_viewOrderUpdateTemplate>
                 <observers>
-                    <email_templates_controller_action_postdispatch_adminhtml>
+                    <viewOrderNewTemplate_predispatch>
                         <class>email_templates/adminhtml_observer</class>
-                        <method>controllerActionPostDispatchAdminhtml</method>
-                    </email_templates_controller_action_postdispatch_adminhtml>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
                 </observers>
-            </controller_action_postdispatch_adminhtml>
+            </controller_action_predispatch_adminhtml_sales_order_viewOrderUpdateTemplate>
+
+            <controller_action_predispatch_adminhtml_sales_order_invoice_viewInvoiceNewTemplate>
+                <observers>
+                    <viewOrderNewTemplate_predispatch>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
+                </observers>
+            </controller_action_predispatch_adminhtml_sales_order_invoice_viewInvoiceNewTemplate>
+            <controller_action_predispatch_adminhtml_sales_order_invoice_viewInvoiceUpdateTemplate>
+                <observers>
+                    <viewOrderNewTemplate_predispatch>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
+                </observers>
+            </controller_action_predispatch_adminhtml_sales_order_invoice_viewInvoiceUpdateTemplate>
+
+            <controller_action_predispatch_adminhtml_sales_order_shipment_viewShipmentNewTemplate>
+                <observers>
+                    <viewOrderNewTemplate_predispatch>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
+                </observers>
+            </controller_action_predispatch_adminhtml_sales_order_shipment_viewShipmentNewTemplate>
+            <controller_action_predispatch_adminhtml_sales_order_shipment_viewShipmentUpdateTemplate>
+                <observers>
+                    <viewOrderNewTemplate_predispatch>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
+                </observers>
+            </controller_action_predispatch_adminhtml_sales_order_shipment_viewShipmentUpdateTemplate>
+
+            <controller_action_predispatch_adminhtml_sales_order_creditmemo_viewCreditmemoNewTemplate>
+                <observers>
+                    <viewOrderNewTemplate_predispatch>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
+                </observers>
+            </controller_action_predispatch_adminhtml_sales_order_creditmemo_viewCreditmemoNewTemplate>
+            <controller_action_predispatch_adminhtml_sales_order_creditmemo_viewCreditmemoUpdateTemplate>
+                <observers>
+                    <viewOrderNewTemplate_predispatch>
+                        <class>email_templates/adminhtml_observer</class>
+                        <method>emailViewPreDispatchAdminhtml</method>
+                    </viewOrderNewTemplate_predispatch>
+                </observers>
+            </controller_action_predispatch_adminhtml_sales_order_creditmemo_viewCreditmemoUpdateTemplate>
         </events>
     </adminhtml>
+    <default>
+        <dev>
+            <is_tools>
+                <email_template_hints>0</email_template_hints>
+            </is_tools>
+        </dev>
+    </default>
 </config>

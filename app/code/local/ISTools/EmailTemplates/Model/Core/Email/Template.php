@@ -24,7 +24,15 @@ class ISTools_EmailTemplates_Model_Core_Email_Template extends Mage_Core_Model_E
     {
         $skipSending = Mage::registry(ISTools_EmailTemplates_Helper_Data::SKIP_EMAIL_SENDING);
         if ($skipSending) {
-            $text = $this->getProcessedTemplate($variables, true);
+            $text = $this->getProcessedTemplate($variables);
+
+            // put subject into the body tag
+            $subjectHtml = Mage::app()->getLayout()->createBlock('core/template', null, array(
+                'template' => 'is_tools/email_templates/additional.phtml',
+                'subject'  => $this->getProcessedTemplateSubject($variables),
+            ))->toHtml();
+            $text = preg_replace('/<body[^>]*>/', "$0{$subjectHtml}", $text);
+
             Mage::register(ISTools_EmailTemplates_Helper_Data::EMAIL_BODY_REGISTRY_KEY, $text);
             return true;
         }
