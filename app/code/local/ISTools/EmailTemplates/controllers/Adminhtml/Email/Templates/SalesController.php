@@ -27,6 +27,10 @@ class ISTools_EmailTemplates_Adminhtml_Email_Templates_SalesController extends M
          */
         $entity = $request->getParam('entity');
 
+        if (!$entity->getId()) {
+            return $this->_redirect('*/sales_order');
+        }
+
         /**
          * @var string $emailType Contains a type of the email to be shown, could be either new or update
          */
